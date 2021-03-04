@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const bottomContainerHeight = 60.0;
-const bottomContainerWidth = 200.0;
+const bottomContainerHeight = 80.0;
 const bottomContainerColor = Color(0xFF1B3352);
-const activeCardColor = Colors.white12;
+const activeCardColor = Colors.blueGrey;
 
 class UserInputPage extends StatefulWidget {
   @override
@@ -28,11 +27,19 @@ class _UserInputPageState extends State<UserInputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: 'MALE',
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     colour: activeCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
+                    ),
                   ),
                 ),
               ],
@@ -60,11 +67,10 @@ class _UserInputPageState extends State<UserInputPage> {
             ),
           ),
           Container(
-            //color: Color(0xFFFE500F),
-            margin: EdgeInsets.only(bottom: 20.0),
+            color: bottomContainerColor,
+            margin: EdgeInsets.only(top: 10.0),
             height: bottomContainerHeight,
-            //width: double.infinity,
-            width: bottomContainerWidth,
+            width: double.infinity,
             child: Center(
               child: Text(
                 'CALCULATE',
@@ -73,13 +79,37 @@ class _UserInputPageState extends State<UserInputPage> {
                 ),
               ),
             ),
-            decoration: BoxDecoration(
-              color: bottomContainerColor,
-              borderRadius: BorderRadius.circular(10.0),
-            ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class IconContent extends StatelessWidget {
+
+  IconContent({@required this.icon, @required this.label});
+
+  final String label;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+            icon,
+            size: 80.0,
+        ),
+        SizedBox(height: 15.0,),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 18.0,
+          ),
+        ),
+      ],
     );
   }
 }
