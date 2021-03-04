@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 60.0;
+const bottomContainerWidth = 200.0;
+
 class UserInputPage extends StatefulWidget {
   @override
   _UserInputPageState createState() => _UserInputPageState();
@@ -43,6 +46,25 @@ class _UserInputPageState extends State<UserInputPage> {
               ],
             ),
           ),
+          Container(
+            //color: Color(0xFFFE500F),
+            margin: EdgeInsets.only(bottom: 20.0, ),
+            height: bottomContainerHeight,
+            //width: double.infinity,
+            width: bottomContainerWidth,
+            child: Center(
+              child: Text(
+                'CALCULATE',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Color(0xFF1B3352),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+          ),
         ],
       ),
     );
@@ -53,7 +75,7 @@ class ReusableCard extends StatelessWidget {
 
   ReusableCard({@required this.colour});
 
-  Color colour;
+  final Color colour;
 
   @override
   Widget build(BuildContext context) {
