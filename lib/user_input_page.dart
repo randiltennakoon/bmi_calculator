@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 const bottomContainerHeight = 60.0;
 const bottomContainerWidth = 200.0;
+const bottomContainerColor = Color(0xFF1B3352);
+const activeCardColor = Colors.white12;
 
 class UserInputPage extends StatefulWidget {
   @override
@@ -23,25 +25,35 @@ class _UserInputPageState extends State<UserInputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Colors.white12,),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Colors.white12,),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(colour: Colors.white12,),
+            child: ReusableCard(
+              colour: activeCardColor,
+            ),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(colour: Colors.white12,),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(colour: Colors.white12,),
+                  child: ReusableCard(
+                    colour: activeCardColor,
+                  ),
                 ),
               ],
             ),
@@ -61,7 +73,7 @@ class _UserInputPageState extends State<UserInputPage> {
               ),
             ),
             decoration: BoxDecoration(
-              color: Color(0xFF1B3352),
+              color: bottomContainerColor,
               borderRadius: BorderRadius.circular(10.0),
             ),
           ),
