@@ -4,8 +4,9 @@ import 'reusable_card.dart';
 import 'icon_content.dart';
 
 const bottomContainerHeight = 80.0;
-const bottomContainerColor = Color(0xFF1B3352);
-const activeCardColor = Colors.blueGrey;
+const bottomContainerColor = Color(0xFF576EE6);
+const activeCardColor = Color(0xFFD5DFEB);
+const inactiveCardColor = Color(0xFFD7D8DD);
 
 class UserInputPage extends StatefulWidget {
   @override
@@ -27,11 +28,16 @@ class _UserInputPageState extends State<UserInputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    colour: activeCardColor,
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
+                  child: GestureDetector(
+                    onTap: () {
+                      print('Male card get pressed');
+                    },
+                    child: ReusableCard(
+                      colour: inactiveCardColor,
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        label: 'MALE',
+                      ),
                     ),
                   ),
                 ),
@@ -78,6 +84,7 @@ class _UserInputPageState extends State<UserInputPage> {
                 'CALCULATE',
                 style: TextStyle(
                   fontSize: 20.0,
+                  color: Colors.white,
                 ),
               ),
             ),
