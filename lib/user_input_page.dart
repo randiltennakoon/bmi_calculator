@@ -60,7 +60,7 @@ class _UserInputPageState extends State<UserInputPage> {
           ),
           Container(
             //color: Color(0xFFFE500F),
-            margin: EdgeInsets.only(bottom: 20.0, ),
+            margin: EdgeInsets.only(bottom: 20.0),
             height: bottomContainerHeight,
             //width: double.infinity,
             width: bottomContainerWidth,
@@ -85,13 +85,15 @@ class _UserInputPageState extends State<UserInputPage> {
 
 class ReusableCard extends StatelessWidget {
 
-  ReusableCard({@required this.colour});
+  ReusableCard({@required this.colour, this.cardChild});
 
   final Color colour;
+  final Widget cardChild;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      child: cardChild,
       margin: EdgeInsets.all(15.0),
       decoration: BoxDecoration(
         color: colour,
