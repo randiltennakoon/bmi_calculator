@@ -22,14 +22,6 @@ class _UserInputPageState extends State<UserInputPage> {
 
   Gender selectedGender;
 
-  // Color maleCardColour = inactiveCardColor;
-  // Color femaleCardColour = inactiveCardColor;
-  //
-  // void updateColor(Gender selectedGender) {
-  //
-  // }
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +41,6 @@ class _UserInputPageState extends State<UserInputPage> {
                       setState(() {
                         selectedGender = Gender.male;
                       });
-                      //print('Male card get pressed');
                     },
                     child: ReusableCard(
                       colour: selectedGender == Gender.male ? activeCardColor : inactiveCardColor,
